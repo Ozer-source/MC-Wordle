@@ -8,7 +8,8 @@
     "speed": 1.0,
     "attackDamage": 6,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "zombie",
@@ -19,7 +20,8 @@
     "speed": 1.0,
     "attackDamage": 3,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "skeleton",
@@ -30,7 +32,8 @@
     "speed": 1.0,
     "attackDamage": 3,
     "xp": 5,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "spider",
@@ -41,18 +44,20 @@
     "speed": 1.2,
     "attackDamage": 2,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "enderman",
     "release": "Beta",
     "health": 40,
     "height": 2.9,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.0,
     "attackDamage": 7,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "slime",
@@ -63,7 +68,8 @@
     "speed": 0.8,
     "attackDamage": 3,
     "xp": 4,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "witch",
@@ -74,7 +80,8 @@
     "speed": 0.8,
     "attackDamage": 6,
     "xp": 5,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "pig",
@@ -85,7 +92,8 @@
     "speed": 1.2,
     "attackDamage": 0,
     "xp": 1,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "cow",
@@ -96,7 +104,8 @@
     "speed": 1.2,
     "attackDamage": 0,
     "xp": 1,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "sheep",
@@ -107,7 +116,8 @@
     "speed": 1.2,
     "attackDamage": 0,
     "xp": 1,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "chicken",
@@ -118,18 +128,20 @@
     "speed": 1.2,
     "attackDamage": 0,
     "xp": 1,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "wolf",
     "release": "Beta",
     "health": 20,
     "height": 0.85,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.0,
     "attackDamage": 4,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "ocelot",
@@ -140,29 +152,32 @@
     "speed": 1.3,
     "attackDamage": 0,
     "xp": 3,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "iron_golem",
     "release": "Beta",
     "health": 100,
     "height": 2.7,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 0.9,
     "attackDamage": 15,
     "xp": 15,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "snow_golem",
     "release": "Beta",
     "health": 4,
     "height": 1.9,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.0,
     "attackDamage": 1,
     "xp": 4,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "villager",
@@ -173,7 +188,8 @@
     "speed": 0.5,
     "attackDamage": 0,
     "xp": 3,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "guardian",
@@ -184,7 +200,8 @@
     "speed": 0.8,
     "attackDamage": 6,
     "xp": 10,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "elder_guardian",
@@ -195,7 +212,8 @@
     "speed": 0.75,
     "attackDamage": 8,
     "xp": 20,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "blaze",
@@ -206,7 +224,8 @@
     "speed": 0.7,
     "attackDamage": 6,
     "xp": 10,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "Yes"
   },
   {
     "name": "ghast",
@@ -217,7 +236,8 @@
     "speed": 0.6,
     "attackDamage": 6,
     "xp": 15,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "Yes"
   },
   {
     "name": "magma_cube",
@@ -228,7 +248,8 @@
     "speed": 0.8,
     "attackDamage": 4,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "bat",
@@ -239,29 +260,8 @@
     "speed": 0.6,
     "attackDamage": 0,
     "xp": 3,
-    "ranged": "Not Available"
-  },
-  {
-    "name": "shulker",
-    "release": "1.11",
-    "health": 30,
-    "height": 1.0,
-    "behavior": "Neutral",
-    "speed": 0.0,
-    "attackDamage": 2,
-    "xp": 5,
-    "ranged": "Yes"
-  },
-  {
-    "name": "endermite",
-    "release": "1.8",
-    "health": 8,
-    "height": 0.3,
-    "behavior": "Hostile",
-    "speed": 1.0,
-    "attackDamage": 2,
-    "xp": 5,
-    "ranged": "No"
+    "ranged": "Not Available",
+    "flying": "Yes"
   },
   {
     "name": "horse",
@@ -272,7 +272,8 @@
     "speed": 0.8,
     "attackDamage": 0,
     "xp": 5,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "donkey",
@@ -283,7 +284,8 @@
     "speed": 0.8,
     "attackDamage": 0,
     "xp": 5,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "mule",
@@ -294,7 +296,8 @@
     "speed": 0.8,
     "attackDamage": 0,
     "xp": 5,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "llama",
@@ -305,7 +308,8 @@
     "speed": 0.8,
     "attackDamage": 0,
     "xp": 5,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "parrot",
@@ -316,7 +320,8 @@
     "speed": 0.6,
     "attackDamage": 0,
     "xp": 3,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "Yes"
   },
   {
     "name": "panda",
@@ -327,29 +332,32 @@
     "speed": 0.7,
     "attackDamage": 0,
     "xp": 5,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "fox",
     "release": "1.14",
     "health": 10,
     "height": 0.7,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.2,
     "attackDamage": 3,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "bee",
     "release": "1.15",
     "health": 10,
     "height": 0.6,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.3,
     "attackDamage": 2,
     "xp": 3,
-    "ranged": "No"
+    "ranged": "Yes",
+    "flying": "Yes"
   },
   {
     "name": "pillager",
@@ -360,7 +368,8 @@
     "speed": 0.9,
     "attackDamage": 5,
     "xp": 5,
-    "ranged": "Yes"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "ravager",
@@ -371,7 +380,8 @@
     "speed": 0.5,
     "attackDamage": 12,
     "xp": 20,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "strider",
@@ -382,7 +392,8 @@
     "speed": 1.0,
     "attackDamage": 0,
     "xp": 3,
-    "ranged": "Not Available"
+    "ranged": "Not Available",
+    "flying": "No"
   },
   {
     "name": "hoglin",
@@ -393,18 +404,20 @@
     "speed": 1.0,
     "attackDamage": 6,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "piglin",
     "release": "1.16",
     "health": 16,
     "height": 1.95,
-    "behavior": "Neutral",
+    "behavior": "Hostile",
     "speed": 1.0,
     "attackDamage": 5,
     "xp": 5,
-    "ranged": "No"
+    "ranged": "Yes",
+    "flying": "No"
   },
   {
     "name": "piglin_brute",
@@ -415,7 +428,8 @@
     "speed": 1.0,
     "attackDamage": 9,
     "xp": 15,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   },
   {
     "name": "zoglin",
@@ -426,6 +440,7 @@
     "speed": 1.0,
     "attackDamage": 8,
     "xp": 15,
-    "ranged": "No"
+    "ranged": "No",
+    "flying": "No"
   }
 ]

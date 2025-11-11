@@ -25,7 +25,7 @@ function CheckInput() {
         return;
     }
 
-    const boxKeys = ['release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'xp', 'ranged'];
+    const boxKeys = ['release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'xp', 'ranged',  'flying'];
 
     // Fill boxes with guessed mob values
     boxKeys.forEach((key, index) => {

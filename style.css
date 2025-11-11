@@ -25,6 +25,7 @@ button {
 }
 
 [class^="box-"] {
+    user-select: none;
     color: #eee;
     font-size: large;
     background-image: url(https://cdn.modrinth.com/data/PW18DBII/17c316d4951db91f5dae1d787917d6f4ebfdbb09.png);
