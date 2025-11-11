@@ -4,17 +4,24 @@ const boxKeys = ['name', 'release', 'health', 'height', 'behavior', 'speed', 'at
 
 // Load mobs from JSON
 fetch('mobs.json')
-  .then(response => response.json())
-  .then(data => {
-    mobs = data;
-    StartGame(); // Start after loading
-  })
-  .catch(err => console.error('Failed to load mobs:', err));
+    .then(response => response.json())
+    .then(data => {
+        mobs = data;
+        StartGame(); // Start after loading
+    })
+    .catch(err => console.error('Failed to load mobs:', err));
 
 function StartGame() {
     if (!mobs.length) return;
     mob = mobs[Math.floor(Math.random() * mobs.length)];
+    removeAllChildNodes(document.querySelector('#guesses-container'));
     console.log('New mob selected (hidden):', mob.name);
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 function CheckInput() {
@@ -33,9 +40,25 @@ function CheckInput() {
     boxKeys.forEach(key => {
         const box = document.createElement('div');
         box.classList.add('box');
+
+        let guessedValue = guessedMob[key];
+        let actualValue = mob[key];
+        let hint = "";
+
+        // Compare numeric properties
+        if (['health', 'height', 'speed', 'attackDamage'].includes(key)) {
+            const guessedNum = parseFloat(guessedValue);
+            const actualNum = parseFloat(actualValue);
+
+            if (!isNaN(guessedNum) && !isNaN(actualNum)) {
+                if (guessedNum > actualNum) hint = " ↓";
+                else if (guessedNum < actualNum) hint = " ↑";
+            }
+        }
+
         box.innerHTML = `
             <div class="label">${key.charAt(0).toUpperCase() + key.slice(1)}</div>
-            <div class="value">${guessedMob[key]}</div>
+            <div class="value">${guessedValue}${hint}</div>
         `;
 
         // Highlight green if matches current mob
@@ -87,4 +110,3 @@ document.addEventListener('click', function (e) {
         suggestions.innerHTML = '';
     }
 });
-// Trigger GitHub Pages redeploy
