@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-image: url(img/BG.webp);
 }
 
 input {
@@ -22,21 +23,26 @@ button {
 }
 
 [class^="box-"] {
+    color: #eee;
+    font-size: large;
+    background-image: url(https://cdn.modrinth.com/data/PW18DBII/17c316d4951db91f5dae1d787917d6f4ebfdbb09.png);
+    background-size: cover;
+    background-position: center;
     width: 150px;
-    height: 70px; /* taller to fit label + value */
+    height: 150px;
     margin: 5px;
     padding: 5px;
-    border: 1px solid #ccc;
     display: inline-block;
     text-align: center;
     font-weight: bold;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 .label {
     font-size: 14px;
     color: #555;
     margin-bottom: 5px;
+    color: #eee;
 }
 
 .value {
@@ -44,8 +50,7 @@ button {
 }
 
 .green {
-    background-color: lightgreen;
-    border: 2px solid green;
+    color: green;
 }
 
 #suggestions {
