@@ -32,8 +32,6 @@ function StartGame() {
 
 function CheckInput() {
     const input = document.querySelector('#mobInput').value.toLowerCase();
-
-    // Find guessed mob
     const guessedMob = mobs.find(m => m.name === input);
     if (!guessedMob) {
         console.log('This mob does not exist!');
@@ -42,22 +40,21 @@ function CheckInput() {
 
     const boxKeys = ['release', 'health', 'height', 'behavior'];
 
-    // Fill boxes mob.value
+    // Fill boxes with guessed mob values
     boxKeys.forEach((key, index) => {
         const boxValue = document.querySelector(`.box-${index + 1} .value`);
         boxValue.innerHTML = guessedMob[key];
         boxValue.classList.remove('green');
     });
 
-    // Check if correct == true
+    // Check if correct
     if (input === mob.name) {
         alert('You guessed it right! It is ' + mob.name);
-        mob = {};
         StartGame();
         return;
     }
 
-    // Highlight matching properties green
+    // Highlight matching properties
     boxKeys.forEach((key, index) => {
         if (mob[key] === guessedMob[key]) {
             console.log(`Property "${key}" matches: ${mob[key]}`);
@@ -67,17 +64,15 @@ function CheckInput() {
     });
 }
 
-
 // Autocomplete suggestions
 function showSuggestions() {
     const input = document.querySelector('#mobInput').value.toLowerCase();
     const suggestions = document.querySelector('#suggestions');
     suggestions.innerHTML = '';
 
-    // If input is empty, show all mobs
     const filteredMobs = input 
         ? mobs.filter(m => m.name.startsWith(input)) 
-        : mobs;
+        : mobs; // show all if empty
 
     filteredMobs.forEach(m => {
         const div = document.createElement('div');
@@ -90,5 +85,5 @@ function showSuggestions() {
     });
 }
 
-// auto start the game
+// Start first game
 StartGame();
