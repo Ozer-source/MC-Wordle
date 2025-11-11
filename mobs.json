@@ -156,11 +156,11 @@
     "flying": "No"
   },
   {
-    "name": "iron_golem",
+    "name": "iron golem",
     "release": "Beta",
     "health": 100,
     "height": 2.7,
-    "behavior": "Hostile",
+    "behavior": "Neutral",
     "speed": 0.9,
     "attackDamage": 15,
     "xp": 15,
@@ -168,11 +168,11 @@
     "flying": "No"
   },
   {
-    "name": "snow_golem",
+    "name": "snow golem",
     "release": "Beta",
     "health": 4,
     "height": 1.9,
-    "behavior": "Hostile",
+    "behavior": "Passive",
     "speed": 1.0,
     "attackDamage": 1,
     "xp": 4,
@@ -204,7 +204,7 @@
     "flying": "No"
   },
   {
-    "name": "elder_guardian",
+    "name": "elder guardian",
     "release": "Beta",
     "health": 80,
     "height": 2.7,
@@ -240,7 +240,7 @@
     "flying": "Yes"
   },
   {
-    "name": "magma_cube",
+    "name": "magma cube",
     "release": "Beta",
     "health": 16,
     "height": 1.0,
@@ -420,7 +420,7 @@
     "flying": "No"
   },
   {
-    "name": "piglin_brute",
+    "name": "piglin brute",
     "release": "1.16",
     "health": 32,
     "height": 1.95,
@@ -441,6 +441,114 @@
     "attackDamage": 8,
     "xp": 15,
     "ranged": "No",
+    "flying": "No"
+  },
+  {
+    "name": "axolotl",
+    "release": "1.17",
+    "health": 14,
+    "height": 0.42,
+    "behavior": "Passive",
+    "speed": 1.3,
+    "attackDamage": 2,
+    "xp": 3,
+    "ranged": "Not Available",
+    "flying": "No"
+  },
+  {
+    "name": "glow_squid",
+    "release": "1.17",
+    "health": 10,
+    "height": 0.8,
+    "behavior": "Passive",
+    "speed": 0.8,
+    "attackDamage": 0,
+    "xp": 1,
+    "ranged": "Not Available",
+    "flying": "No"
+  },
+  {
+    "name": "goat",
+    "release": "1.17",
+    "health": 10,
+    "height": 1.3,
+    "behavior": "Neutral",
+    "speed": 1.0,
+    "attackDamage": 2,
+    "xp": 5,
+    "ranged": "No",
+    "flying": "No"
+  },
+  {
+    "name": "warden",
+    "release": "1.19",
+    "health": 500,
+    "height": 2.9,
+    "behavior": "Hostile",
+    "speed": 0.6,
+    "attackDamage": 30,
+    "xp": 20,
+    "ranged": "No",
+    "flying": "No"
+  },
+  {
+    "name": "allay",
+    "release": "1.19",
+    "health": 20,
+    "height": 0.6,
+    "behavior": "Passive",
+    "speed": 1.2,
+    "attackDamage": 0,
+    "xp": 5,
+    "ranged": "Not Available",
+    "flying": "Yes"
+  },
+  {
+    "name": "frog",
+    "release": "1.19",
+    "health": 10,
+    "height": 0.5,
+    "behavior": "Passive",
+    "speed": 1.0,
+    "attackDamage": 0,
+    "xp": 1,
+    "ranged": "Not Available",
+    "flying": "No"
+  },
+  {
+    "name": "tadpole",
+    "release": "1.19",
+    "health": 6,
+    "height": 0.3,
+    "behavior": "Passive",
+    "speed": 1.0,
+    "attackDamage": 0,
+    "xp": 1,
+    "ranged": "Not Available",
+    "flying": "No"
+  },
+  {
+    "name": "camel",
+    "release": "1.20",
+    "health": 32,
+    "height": 2.375,
+    "behavior": "Passive",
+    "speed": 0.9,
+    "attackDamage": 0,
+    "xp": 5,
+    "ranged": "Not Available",
+    "flying": "No"
+  },
+  {
+    "name": "sniffer",
+    "release": "1.20",
+    "health": 14,
+    "height": 1.75,
+    "behavior": "Passive",
+    "speed": 0.5,
+    "attackDamage": 0,
+    "xp": 5,
+    "ranged": "Not Available",
     "flying": "No"
   }
 ]
