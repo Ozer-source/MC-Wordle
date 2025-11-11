@@ -1,9 +1,10 @@
-html, body {
+html,
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-image: url(img/BG.webp);
-    background-size:auto;
+    background-image: url(img/BG.jpg);
+    background-size: auto;
     background-position: center;
 }
 
@@ -11,6 +12,10 @@ input {
     padding: 5px 10px;
     font-size: 16px;
     width: 200px;
+    background-image: url(img/BG.jpg);
+    border: 3px solid #ccc;
+    border-radius: 14px;
+    color: white;
 }
 
 button {
@@ -28,7 +33,7 @@ button {
     user-select: none;
     color: #eee;
     font-size: large;
-    background-image: url(https://cdn.modrinth.com/data/PW18DBII/17c316d4951db91f5dae1d787917d6f4ebfdbb09.png);
+    background-image: url(img/box.webp);
     background-size: cover;
     background-position: center;
     width: 150px;

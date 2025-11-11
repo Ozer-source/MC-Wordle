@@ -3,12 +3,12 @@ let mob = {};
 
 // Load mobs from JSON
 fetch('mobs.json')
-  .then(response => response.json())
-  .then(data => {
-    mobs = data;
-    StartGame(); // Start after loading
-  })
-  .catch(err => console.error('Failed to load mobs:', err));
+    .then(response => response.json())
+    .then(data => {
+        mobs = data;
+        StartGame(); // Start after loading
+    })
+    .catch(err => console.error('Failed to load mobs:', err));
 
 function StartGame() {
     if (!mobs.length) return;
@@ -25,7 +25,7 @@ function CheckInput() {
         return;
     }
 
-    const boxKeys = ['release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'xp', 'ranged',  'flying'];
+    const boxKeys = ['name', 'release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'ranged', 'flying'];
 
     // Fill boxes with guessed mob values
     boxKeys.forEach((key, index) => {
@@ -75,7 +75,7 @@ function showSuggestions() {
 }
 
 // Hide suggestions if clicking outside
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const suggestions = document.querySelector('#suggestions');
     const input = document.querySelector('#mobInput');
     if (e.target !== input) {
