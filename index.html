@@ -8,26 +8,15 @@
 </head>
 <body>
 
-<h1 class="">Mob Guessing Game</h1>
+<h1>Mob Guessing Game</h1>
+
 <input type="text" placeholder="Guess the mob..." id="mobInput" oninput="showSuggestions()" autocomplete="off">
 <button onclick="CheckInput()">Check</button>
 <div id="suggestions"></div>
 
-<div class="boxes">
-  <div class="box-1"><div class="label">Name</div><div class="value name"></div></div>
-  <div class="box-2"><div class="label">Release</div><div class="value release"></div></div>
-  <div class="box-3"><div class="label">Health</div><div class="value health"></div></div>
-  <div class="box-4"><div class="label">Height</div><div class="value height"></div></div>
-  <div class="box-5"><div class="label">Behavior</div><div class="value behavior"></div></div>
-  <div class="box-6"><div class="label">Speed</div><div class="value speed"></div></div>
-  <div class="box-7"><div class="label">Attack Damage</div><div class="value attackDamage"></div></div>
-  <div class="box-8"><div class="label">Ranged</div><div class="value ranged"></div></div>
-  <div class="box-9"><div class="label">Flying</div><div class="value flying"></div></div>
+<div id="guesses-container">
+  <!-- Dynamic guess rows will appear here -->
 </div>
-
-
-
-<!-- add flying -->
 
 <script src="script.js" defer></script>
 </body>

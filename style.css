@@ -1,21 +1,22 @@
-html,
-body {
+html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     padding: 20px;
     background-image: url(img/BG.jpg);
-    background-size: auto;
     background-position: center;
+    color: #eee;
 }
 
 input {
     padding: 5px 10px;
     font-size: 16px;
-    width: 200px;
-    background-image: url(img/BG.jpg);
+    width: 100%;
+    max-width: 300px;
     border: 3px solid #ccc;
     border-radius: 14px;
+    background: rgba(0,0,0,0.5);
     color: white;
+    box-sizing: border-box;
 }
 
 button {
@@ -23,52 +24,67 @@ button {
     font-size: 16px;
     margin-left: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-.boxes {
+#guesses-container {
     margin-top: 20px;
 }
 
-[class^="box-"] {
+/* Guess row */
+.boxes {
+    display: flex;
+    flex-wrap: wrap; /* Wrap on small screens */
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+/* Individual boxes */
+.box {
     user-select: none;
     color: #eee;
     font-size: large;
     background-image: url(img/box.webp);
     background-size: cover;
     background-position: center;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin: 5px;
     padding: 5px;
     display: inline-block;
     text-align: center;
     font-weight: bold;
     vertical-align: bottom;
+    box-sizing: border-box;
 }
 
 .label {
     font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
     color: #eee;
+    margin-bottom: 5px;
 }
 
 .value {
     line-height: 50px;
+    word-wrap: break-word;
 }
 
 .green {
-    color: green;
+    color: #00ff00;
+    font-weight: bold;
 }
 
 #suggestions {
     border: 1px solid #ccc;
-    max-height: 100px;
+    max-height: 150px;
     overflow-y: auto;
-    width: 210px;
+    width: 100%;
+    max-width: 300px;
     position: absolute;
     background: white;
     z-index: 10;
+    color: black;
+    box-sizing: border-box;
 }
 
 #suggestions div {
@@ -78,4 +94,28 @@ button {
 
 #suggestions div:hover {
     background-color: #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .box {
+        width: 100px;
+        height: 100px;
+        font-size: medium;
+    }
+}
+
+@media (max-width: 500px) {
+    .box {
+        width: 90px;
+        height: 90px;
+        font-size: small;
+    }
+    input, #suggestions {
+        max-width: 100%;
+    }
+    button {
+        margin-left: 0;
+        width: 100%;
+    }
 }

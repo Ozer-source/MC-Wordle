@@ -1,14 +1,15 @@
 let mobs = [];
 let mob = {};
+const boxKeys = ['name', 'release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'ranged', 'flying'];
 
 // Load mobs from JSON
 fetch('mobs.json')
-    .then(response => response.json())
-    .then(data => {
-        mobs = data;
-        StartGame(); // Start after loading
-    })
-    .catch(err => console.error('Failed to load mobs:', err));
+  .then(response => response.json())
+  .then(data => {
+    mobs = data;
+    StartGame(); // Start after loading
+  })
+  .catch(err => console.error('Failed to load mobs:', err));
 
 function StartGame() {
     if (!mobs.length) return;
@@ -25,32 +26,36 @@ function CheckInput() {
         return;
     }
 
-    const boxKeys = ['name', 'release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'ranged', 'flying'];
+    // Create new guess row
+    const row = document.createElement('div');
+    row.classList.add('boxes');
 
-    // Fill boxes with guessed mob values
-    boxKeys.forEach((key, index) => {
-        const box = document.querySelector(`.box-${index + 1} .value`);
-        if (box) {
-            box.innerHTML = guessedMob[key];
-            box.classList.remove('green');
+    boxKeys.forEach(key => {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.innerHTML = `
+            <div class="label">${key.charAt(0).toUpperCase() + key.slice(1)}</div>
+            <div class="value">${guessedMob[key]}</div>
+        `;
+
+        // Highlight green if matches current mob
+        if (mob[key] === guessedMob[key]) {
+            box.querySelector('.value').classList.add('green');
         }
+
+        row.appendChild(box);
     });
+
+    document.querySelector('#guesses-container').appendChild(row);
 
     // Check if correct
     if (input === mob.name.toLowerCase()) {
         alert('You guessed it right! It is ' + mob.name);
         StartGame();
-        return;
     }
 
-    // Highlight matching properties
-    boxKeys.forEach((key, index) => {
-        const box = document.querySelector(`.box-${index + 1} .value`);
-        if (box && mob[key] === guessedMob[key]) {
-            console.log(`Property "${key}" matches: ${mob[key]}`);
-            box.classList.add('green');
-        }
-    });
+    document.querySelector('#mobInput').value = '';
+    document.querySelector('#suggestions').innerHTML = '';
 }
 
 // Autocomplete suggestions
