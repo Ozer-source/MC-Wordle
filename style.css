@@ -20,17 +20,27 @@ button {
 .boxes {
     margin-top: 20px;
 }
+
 [class^="box-"] {
     width: 150px;
-    height: 50px;
+    height: 70px; /* taller to fit label + value */
     margin: 5px;
     padding: 5px;
     border: 1px solid #ccc;
     display: inline-block;
     text-align: center;
-    line-height: 50px;
     font-weight: bold;
     vertical-align: top;
+}
+
+.label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.value {
+    line-height: 50px;
 }
 
 .green {
