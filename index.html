@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mob Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mob Guessing Game</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <a href="https://www.fontspace.com/category/minecraft"><img
-            src="https://see.fontimg.com/api/rf5/VGORe/YTQ1NWU1ODA5Y2NmNDgyODkxZjg5MjdiZWQ2ZmFlMjQub3Rm/TW9iIEd1ZXNzaW5nIEdhbWU/minecraft-ten.png?r=fs&h=64&w=1000&fg=000000&bg=FFFFFF&tb=1&s=64"
-            alt="Minecraft fonts"></a><br>
-    <input type="text" placeholder="Guess the mob..." id="mobInput" oninput="showSuggestions()" autocomplete="off">
-    <button onclick="CheckInput()">Check</button>
-    <div id="suggestions"></div>
 
-    <div class="boxes">
-        <div class="box-1">
-            <div class="label">Release</div>
-            <div class="value release"></div>
-        </div>
-        <div class="box-2">
-            <div class="label">Health</div>
-            <div class="value health"></div>
-        </div>
-        <div class="box-3">
-            <div class="label">Height</div>
-            <div class="value height"></div>
-        </div>
-        <div class="box-4">
-            <div class="label">Behavior</div>
-            <div class="value behavior"></div>
-        </div>
-    </div>
+<h1 class="">Mob Guessing Game</h1>
+<input type="text" placeholder="Guess the mob..." id="mobInput" oninput="showSuggestions()" autocomplete="off">
+<button onclick="CheckInput()">Check</button>
+<div id="suggestions"></div>
+
+<div class="boxes">
+  <div class="box-1"><div class="label">Release</div><div class="value release"></div></div>
+  <div class="box-2"><div class="label">Health</div><div class="value health"></div></div>
+  <div class="box-3"><div class="label">Height</div><div class="value height"></div></div>
+  <div class="box-4"><div class="label">Behavior</div><div class="value behavior"></div></div>
+  <div class="box-5"><div class="label">Speed</div><div class="value speed"></div></div>
+  <div class="box-6"><div class="label">Attack Damage</div><div class="value attackDamage"></div></div>
+  <div class="box-7"><div class="label">XP</div><div class="value xp"></div></div>
+  <div class="box-8"><div class="label">Ranged</div><div class="value ranged"></div></div>
+</div>
 
 
-    <script src="script.js" defer></script>
+
+
+<script src="script.js" defer></script>
 </body>
-
 </html>

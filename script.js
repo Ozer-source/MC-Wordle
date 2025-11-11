@@ -1,54 +1,43 @@
-const mobs = [
-    { 'name': 'creeper', 'release': 'Pre-Alpha', 'health': '20', 'height': '1.7', 'behavior': 'Hostile'},
-    { 'name': 'zombie', 'release': 'Pre-Alpha', 'health': '20', 'height': '1.95', 'behavior': 'Hostile'},
-    { 'name': 'skeleton', 'release': 'Pre-Alpha', 'health': '20', 'height': '1.99', 'behavior': 'Hostile'},
-    { 'name': 'spider', 'release': 'Pre-Alpha', 'health': '16', 'height': '0.9', 'behavior': 'Neutral'},
-    { 'name': 'enderman', 'release': 'Beta', 'health': '40', 'height': '2.9', 'behavior': 'Neutral'},
-    { 'name': 'slime', 'release': 'Alpha', 'health': '16', 'height': '1.0', 'behavior': 'Hostile'},
-    { 'name': 'witch', 'release': 'Beta', 'health': '26', 'height': '1.95', 'behavior': 'Hostile'},
-    { 'name': 'pig', 'release': 'Alpha', 'health': '10', 'height': '0.9', 'behavior': 'Passive'},
-    { 'name': 'cow', 'release': 'Alpha', 'health': '10', 'height': '1.4', 'behavior': 'Passive'},
-    { 'name': 'sheep', 'release': 'Alpha', 'health': '8', 'height': '1.3', 'behavior': 'Passive'},
-    { 'name': 'chicken', 'release': 'Alpha', 'health': '4', 'height': '0.7', 'behavior': 'Passive'},
-    { 'name': 'wolf', 'release': 'Beta', 'health': '20', 'height': '0.85', 'behavior': 'Neutral'},
-    { 'name': 'ocelot', 'release': 'Beta', 'health': '10', 'height': '0.7', 'behavior': 'Passive'},
-    { 'name': 'iron_golem', 'release': 'Beta', 'health': '100', 'height': '2.7', 'behavior': 'Neutral'},
-    { 'name': 'snow_golem', 'release': 'Beta', 'health': '4', 'height': '1.9', 'behavior': 'Neutral'},
-    { 'name': 'villager', 'release': 'Alpha', 'health': '20', 'height': '1.8', 'behavior': 'Passive'},
-    { 'name': 'guardian', 'release': 'Beta', 'health': '30', 'height': '1.85', 'behavior': 'Hostile'},
-    { 'name': 'elder_guardian', 'release': 'Beta', 'health': '80', 'height': '2.7', 'behavior': 'Hostile'},
-    { 'name': 'blaze', 'release': 'Beta', 'health': '20', 'height': '1.8', 'behavior': 'Hostile'},
-    { 'name': 'ghast', 'release': 'Beta', 'health': '10', 'height': '4.0', 'behavior': 'Hostile'},
-    { 'name': 'magma_cube', 'release': 'Beta', 'health': '16', 'height': '1.0', 'behavior': 'Hostile'},
-    { 'name': 'bat', 'release': 'Beta', 'health': '6', 'height': '0.5', 'behavior': 'Passive'}
-];
-
+let mobs = [];
 let mob = {};
 
+// Load mobs from JSON
+fetch('mobs.json')
+  .then(response => response.json())
+  .then(data => {
+    mobs = data;
+    StartGame(); // Start after loading
+  })
+  .catch(err => console.error('Failed to load mobs:', err));
+
 function StartGame() {
+    if (!mobs.length) return;
     mob = mobs[Math.floor(Math.random() * mobs.length)];
     console.log('New mob selected (hidden):', mob.name);
 }
 
 function CheckInput() {
     const input = document.querySelector('#mobInput').value.toLowerCase();
-    const guessedMob = mobs.find(m => m.name === input);
+    const guessedMob = mobs.find(m => m.name.toLowerCase() === input);
+
     if (!guessedMob) {
         console.log('This mob does not exist!');
         return;
     }
 
-    const boxKeys = ['release', 'health', 'height', 'behavior'];
+    const boxKeys = ['release', 'health', 'height', 'behavior', 'speed', 'attackDamage', 'xp', 'ranged'];
 
     // Fill boxes with guessed mob values
     boxKeys.forEach((key, index) => {
-        const boxValue = document.querySelector(`.box-${index + 1} .value`);
-        boxValue.innerHTML = guessedMob[key];
-        boxValue.classList.remove('green');
+        const box = document.querySelector(`.box-${index + 1} .value`);
+        if (box) {
+            box.innerHTML = guessedMob[key];
+            box.classList.remove('green');
+        }
     });
 
     // Check if correct
-    if (input === mob.name) {
+    if (input === mob.name.toLowerCase()) {
         alert('You guessed it right! It is ' + mob.name);
         StartGame();
         return;
@@ -56,10 +45,10 @@ function CheckInput() {
 
     // Highlight matching properties
     boxKeys.forEach((key, index) => {
-        if (mob[key] === guessedMob[key]) {
+        const box = document.querySelector(`.box-${index + 1} .value`);
+        if (box && mob[key] === guessedMob[key]) {
             console.log(`Property "${key}" matches: ${mob[key]}`);
-            const boxValue = document.querySelector(`.box-${index + 1} .value`);
-            if (boxValue) boxValue.classList.add('green');
+            box.classList.add('green');
         }
     });
 }
@@ -70,8 +59,8 @@ function showSuggestions() {
     const suggestions = document.querySelector('#suggestions');
     suggestions.innerHTML = '';
 
-    const filteredMobs = input 
-        ? mobs.filter(m => m.name.startsWith(input)) 
+    const filteredMobs = input
+        ? mobs.filter(m => m.name.toLowerCase().startsWith(input))
         : mobs; // show all if empty
 
     filteredMobs.forEach(m => {
@@ -85,9 +74,7 @@ function showSuggestions() {
     });
 }
 
-// Start first game
-StartGame();
-
+// Hide suggestions if clicking outside
 document.addEventListener('click', function(e) {
     const suggestions = document.querySelector('#suggestions');
     const input = document.querySelector('#mobInput');
