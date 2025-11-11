@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mob Guessing Game</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="StartGame()">Start Game</button>
-    <input type="text" oninput="CheckInput()">
 
-    <div class="box-1"></div>
-    <div class="box-2"></div>
-    <div class="box-3"></div>
-    <div class="box-4"></div>
-</body>
+<h1>Mob Guessing Game</h1>
+<input type="text" placeholder="Guess the mob..." id="mobInput" oninput="showSuggestions()">
+<button onclick="CheckInput()">Check</button>
+<div id="suggestions"></div>
+
+<div class="boxes">
+  <div class="box-1 release"></div>
+  <div class="box-2 health"></div>
+  <div class="box-3 height"></div>
+  <div class="box-4 behavior"></div>
+</div>
+
 <script src="script.js"></script>
+</body>
 </html>

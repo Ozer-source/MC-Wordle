@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+input {
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.boxes {
+    margin-top: 20px;
+}
+[class^="box-"] {
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.green {
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+
+#suggestions {
+    border: 1px solid #ccc;
+    max-height: 100px;
+    overflow-y: auto;
+    width: 210px;
+    position: absolute;
+    background: white;
+    z-index: 10;
+}
+
+#suggestions div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background-color: #eee;
+}
