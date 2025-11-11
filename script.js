@@ -87,3 +87,11 @@ function showSuggestions() {
 
 // Start first game
 StartGame();
+
+document.addEventListener('click', function(e) {
+    const suggestions = document.querySelector('#suggestions');
+    const input = document.querySelector('#mobInput');
+    if (e.target !== input) {
+        suggestions.innerHTML = '';
+    }
+});
